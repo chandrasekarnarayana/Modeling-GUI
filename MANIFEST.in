@@ -1,0 +1,19 @@
+# Include the LICENSE file
+include LICENSE
+
+# Include the README.md for documentation
+include README.md
+
+# Include the requirements.txt file
+include requirements.txt
+
+# Include all CSV files in the data directory
+recursive-include modeling_gui/data *.csv
+
+# Include all Python files from modeling_gui and tests directories
+recursive-include modeling_gui *.py
+recursive-include tests *.py
+
+# Include additional files like .ini or config files if needed (optional)
+# recursive-include modeling_gui/config *.ini
+
