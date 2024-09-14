@@ -15,6 +15,7 @@ This tool is built using **PyQt5** for the GUI and **matplotlib**, **seaborn**, 
   - [Visualizations](#visualizations)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
+- [Version](#version)
 - [License](#license)
 
 ---
@@ -212,5 +213,4 @@ Feel free to contact me for any questions or suggestions at [chandrasekarnarayan
 ## License
 
 This project is licensed under the GPLv3 License. See the [LICENSE](LICENSE) file for details.
-```
 
