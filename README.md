@@ -1,6 +1,3 @@
-Here is the updated **`README.md`** file with your name as the author, contact email, and the correct license information (GPLv3.0):
-
-```markdown
 # Modeling-GUI: A PyQt5-Based GUI for Statistical and Machine Learning Models
 
 **Modeling-GUI** is a Python-based graphical user interface (GUI) that allows users to apply and visualize a variety of statistical and machine learning models without needing to write code. The package integrates models such as Ordinary Least Squares (OLS), Random Forest, Gradient Boosting, KMeans Clustering, Gaussian fitting, and more.
