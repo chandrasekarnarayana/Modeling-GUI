@@ -60,6 +60,10 @@ This tool is built using **PyQt5** for the GUI and **matplotlib**, **seaborn**, 
 To use **Modeling-GUI**, you need Python 3.6 or higher. Ensure that the required libraries are installed, or let the package manager install them for you.
 
 ### Steps
+**To install using Pypi package**
+   ```bash
+pip install modeling-gui
+```
 
 1. **Clone the repository**:
 
@@ -71,12 +75,13 @@ To use **Modeling-GUI**, you need Python 3.6 or higher. Ensure that the required
 2. **Install dependencies**:
 
    You can install all the required dependencies listed in `requirements.txt`:
+   (The package requires python 3.9)
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Install the package**:
+4. **Install the package**:
 
    Run the following command to install the package locally:
 
@@ -84,7 +89,7 @@ To use **Modeling-GUI**, you need Python 3.6 or higher. Ensure that the required
    pip install .
    ```
 
-4. **Running the GUI**:
+5. **Running the GUI**:
 
    After installation, you can launch the GUI by running the following command:
 
