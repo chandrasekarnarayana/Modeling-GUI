@@ -17,15 +17,15 @@ setup(
     packages=find_packages(),  # Automatically find all packages in this directory
     include_package_data=True,  # Include non-code files specified in MANIFEST.in
     install_requires=[
-        "pyqt5==5.15.4",
-        "matplotlib==3.4.3",
-        "seaborn==0.11.2",
-        "pandas==1.3.3",
-        "statsmodels==0.12.2",
-        "scikit-learn==0.24.2",
-        "scipy==1.7.1",
-        "graphviz==0.16",
-        "numpy==1.21.2"
+        "pyqt5>=5.15.4",
+        "matplotlib>=3.4.3",
+        "seaborn>=0.11.2",
+        "pandas>=1.3.3",
+        "statsmodels>=0.12.2",
+        "scikit-learn>=0.24.2",
+        "scipy>=1.7.1",
+        "graphviz>=0.16",
+        "numpy>=1.21.2"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

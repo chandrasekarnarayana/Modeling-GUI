@@ -4,7 +4,7 @@ matplotlib>=3.4.3            # For generating visualizations
 seaborn>=0.11.2              # For enhanced visualization, e.g., heatmaps
 
 # Data handling and processing libraries
-pandas>=1.3.3                # For data manipulation and reading CSV files
+pandas>=1.5                # For data manipulation and reading CSV files
 
 # Statistical modeling libraries
 statsmodels>=0.12.2          # For OLS, WLS, GLS, RLM, Recursive LS models
@@ -19,4 +19,4 @@ scipy>=1.7.1                 # For fitting Gaussian and exponential models
 graphviz>=0.16               # For visualizing Random Forest trees
 
 # Additional required dependencies
-numpy>=1.21.2                # Required for numerical operations, used in various models
+numpy>=1.23                # Required for numerical operations, used in various models
