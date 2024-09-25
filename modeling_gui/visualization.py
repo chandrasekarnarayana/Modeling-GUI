@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import confusion_matrix, plot_confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.tree import plot_tree
 import numpy as np
 
@@ -32,15 +32,13 @@ def plot_regression(X, Y, model):
 
 def plot_confusion_matrix(model, X, Y):
     """
-    Plot confusion matrix for classification models.
+    Plot confusion matrix for classification models using ConfusionMatrixDisplay.
     """
     plt.figure(figsize=(8, 6))
-    cm = confusion_matrix(Y, model.predict(X))
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    plt.title("Confusion Matrix")
-    plt.ylabel("True Label")
-    plt.xlabel("Predicted Label")
+    disp = ConfusionMatrixDisplay.from_estimator(model, X, Y, cmap='Blues', xticks_rotation='vertical')
+    disp.ax_.set_title("Confusion Matrix")
     plt.show()
+
 
 def plot_tree_diagram(model):
     """
