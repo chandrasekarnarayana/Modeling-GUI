@@ -29,6 +29,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install build
 
+    - name: Update package version
+      run: |
+        sed -i "s/version='.*'/version='${{ env.RELEASE_VERSION }}'/" setup.py
+      if: startsWith(github.ref, 'refs/tags/')
+
     # Build the Python package
     - name: Build package
       run: python -m build
@@ -46,3 +51,4 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+        skip-existing: true
