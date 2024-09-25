@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="modeling_gui",  # Package name
-    version="0.1.0",  # Initial version
+    version="0.1.1",  # Initial version
     author="Chandrasekar SUBRAMANI NARAYANA",
     author_email="chandrasekarnarayana@gmail.com",
     description="A PyQt5-based GUI for running statistical and machine learning models with customizable parameters and visualizations.",
