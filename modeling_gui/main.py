@@ -21,8 +21,34 @@ class MainApp(QMainWindow):
         """
         Initialize the UI components.
         """
-        # Add buttons, text boxes, etc. (Code omitted for brevity)
-        pass
+        """
+        Initialize the UI components.
+        """
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout()
+
+        # Add buttons and other controls
+        self.load_button = QPushButton("Load CSV")
+        self.load_button.clicked.connect(self.load_csv)
+
+        self.model_combo = QComboBox()
+        self.model_combo.addItems(["OLS", "Rolling Least Squares", "Random Forest", "Gradient Boosting", "KMeans Clustering", "Gaussian Fitting", "Exponential Fitting"])
+
+        self.run_button = QPushButton("Run Model")
+        self.run_button.clicked.connect(self.run_model)
+
+        self.result_label = QLabel("Results:")
+        self.result_box = QTextEdit()
+
+        # Add components to the layout
+        layout.addWidget(self.load_button)
+        layout.addWidget(self.model_combo)
+        layout.addWidget(self.run_button)
+        layout.addWidget(self.result_label)
+        layout.addWidget(self.result_box)
+
+        central_widget.setLayout(layout)
 
     def load_csv(self):
         """
