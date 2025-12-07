@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="modeling_gui",  # Package name
-    version="0.1.1",  # Initial version
+    version="0.1.2",  # Next minor version
     author="Chandrasekar SUBRAMANI NARAYANA",
     author_email="chandrasekarnarayana@gmail.com",
     description="A PyQt5-based GUI for running statistical and machine learning models with customizable parameters and visualizations.",
@@ -25,8 +25,28 @@ setup(
         "scikit-learn>=0.24.2",
         "scipy>=1.7.1",
         "graphviz>=0.16",
-        "numpy>=1.21.2"
+        "numpy>=1.21.2",
+        # Optional features are now included by default for a one-stop install
+        "flaml>=2.2.0",
+        "prophet>=1.1",
+        "shap>=0.44.0",
+        "pywin32>=306; platform_system=='Windows'",
+        "winshell>=0.6; platform_system=='Windows'",
     ],
+    extras_require={
+        # Lean install keeps only the base GUI deps (no effect on mandatory list but documented)
+        "lean": [],
+        "automl": [
+            "flaml>=2.2.0",
+        ],
+        "full": [
+            "flaml>=2.2.0",
+            "prophet>=1.1",
+            "shap>=0.44.0",
+            "pywin32>=306; platform_system=='Windows'",
+            "winshell>=0.6; platform_system=='Windows'",
+        ],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -36,6 +56,7 @@ setup(
     entry_points={
         'console_scripts': [
             'run_modeling_gui=modeling_gui.main:main',  # Entry point for running the GUI from CLI
+            'modeling-gui-install-shortcut=modeling_gui.install_shortcuts:install_shortcut',
         ],
     },
 )

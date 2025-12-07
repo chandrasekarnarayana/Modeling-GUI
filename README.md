@@ -1,20 +1,61 @@
-# Modeling-GUI: A PyQt5-Based GUI for Statistical and Machine Learning Models
+[![CI](https://github.com/chandrasekarnarayana/Modeling-GUI/actions/workflows/ci.yml/badge.svg)](https://github.com/chandrasekarnarayana/Modeling-GUI/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-online-brightgreen)](https://example.com)
 
-**Modeling-GUI** is a Python-based graphical user interface (GUI) that allows users to apply and visualize a variety of statistical and machine learning models without needing to write code. The package integrates models such as Ordinary Least Squares (OLS), Random Forest, Gradient Boosting, KMeans Clustering, Gaussian fitting, and more.
+<p align="center">
+  <img src="docs/assets/logo-modeling-gui.svg" alt="Modeling-GUI logo" width="160"/>
+</p>
 
-This tool is built using **PyQt5** for the GUI and **matplotlib**, **seaborn**, and other scientific libraries for visualizations. It’s designed for data scientists, analysts, and machine learning enthusiasts who want to quickly prototype models and see immediate results.
+# Modeling-GUI: No-code ML & stats GUI for CSV data – from beginner to expert
+
+**Modeling-GUI** is a PyQt5 desktop app that lets anyone load a CSV, pick what they want to predict, click **Smart Analyze**, and immediately see metrics, plots, and a transparent **“What I did”** report.  
+
+Non-coders get a guided, one-button experience. Power users keep full control over models, parameters, and preprocessing.
+
+---
+
+## Vision & Philosophy
+
+Most people who work with data are **not** programmers: financial analysts, lab scientists, students, small-business owners, and domain experts of all kinds. They often have:
+
+- A **CSV file**,  
+- A **question** (“What drives this?”, “Can I predict that?”),  
+- And **very little time** or coding experience.
+
+**Modeling-GUI** aims to be their missing bridge:
+
+- A **tool for “dummies” on the surface**, but backed by solid statistical and ML workflows.
+- Minimal choices for beginners (just “What do you want to predict?” and “Run Smart Analyze”).
+- Full transparency and control for experts:
+  - Inspect preprocessing and model choices,
+  - Switch to manual models,  
+  - Tweak parameters, and  
+  - Reproduce everything later via project files and reports.
+
+The goal is simple:  
+> **Lower the barrier to serious modeling while staying honest, explainable, and reproducible.**
+
+---
 
 ## Table of Contents
 
+- [Vision & Philosophy](#vision--philosophy)
 - [Features](#features)
 - [Installation](#installation)
+- [Launch](#launch)
+- [Quickstart (60 seconds)](#quickstart-60-seconds)
 - [Usage](#usage)
   - [Supported Models](#supported-models)
   - [Example Workflow](#example-workflow)
-  - [Model Customization](#model-customization)
   - [Visualizations](#visualizations)
+  - [Train/Test Split & Metrics](#traintest-split--metrics)
+  - [Model Persistence](#model-persistence)
+  - [Smart Analyze (AutoML)](#smart-analyze-automl)
+  - [Basic vs Expert Mode](#basic-vs-expert-mode)
+  - [Domain Presets](#domain-presets)
+- [Projects & Reports](#projects--reports)
+- [Examples](#examples)
 - [Dependencies](#dependencies)
-- [Contributing](#contributing)
+- [Screenshots](#screenshots)
 - [Version](#version)
 - [License](#license)
 
@@ -22,200 +63,352 @@ This tool is built using **PyQt5** for the GUI and **matplotlib**, **seaborn**, 
 
 ## Features
 
-**Modeling-GUI** provides a wide range of models and tools:
-- **Statistical Regression Models**:
-  - Ordinary Least Squares (OLS)
-  - Weighted Least Squares (WLS)
-  - Generalized Least Squares (GLS)
-  - Recursive Least Squares (Recursive LS)
-  - Rolling Least Squares (Rolling LS)
-  - Robust Linear Model (RLM)
-  
-- **Machine Learning Models**:
-  - Random Forest (Regression and Classification)
-  - Gradient Boosting (Regression and Classification)
+- **Smart Analyze**
+  - One click to detect the problem type, run AutoML (optional dependency), compute metrics, generate plots, and produce a human-readable **“What I did”** summary.
 
-- **Clustering**:
-  - KMeans Clustering (with customizable number of clusters)
+- **Basic & Expert modes**
+  - **Basic:** minimal UI for beginners (load CSV → choose target → Smart Analyze).
+  - **Expert:** exposes full model selection, preprocessing options, parameter dialogs, and manual runs.
 
-- **Advanced Data Fitting**:
-  - Gaussian Fitting
-  - Exponential Growth/Decay Fitting
+- **Domain presets**
+  - Presets for **Finance**, **Science**, **Business**, and **Generic**:
+    - Tailored hints in the coach/status bar.
+    - Preferred metrics and default plots per domain.
 
-- **Visualizations**:
-  - Regression plots
-  - Confusion matrices for classification models
-  - Random Forest tree diagrams
-  - Gaussian and Exponential curve fitting plots
+- **Modeling**
+  - **Regression:** OLS, WLS, GLS, Recursive LS, Robust LS (RLM), Rolling LS, RandomForest, GradientBoosting, Gaussian/Exponential curve fits.
+  - **Classification:** RandomForest, GradientBoosting.
+  - **Clustering:** KMeans.
 
-- **Parameter Customization**:
-  - Users can specify model parameters such as the number of estimators for Random Forest, learning rate for Gradient Boosting, or the number of clusters for KMeans Clustering through customizable dialogs.
+- **Visualizations**
+  - Regression & residual plots, confusion matrices, tree diagrams, feature importance plots, and curve fits (Gaussian/Exponential).
+
+- **Preprocessing**
+  - Missing-value strategies.
+  - Optional standardization of numeric features.
+  - Simple numeric filtering and type handling.
+
+- **Persistence & reproducibility**
+  - Save/load trained models (with key metadata).
+  - Save/load project files (`.mgui`) capturing data choices, model settings, metrics, and summaries.
+  - Export text/Markdown reports of each analysis.
+
+- **Transparency**
+  - Dedicated **“What I did”** tab:
+    - Data summary,
+    - Preprocessing decisions,
+    - Models tried,
+    - Best model and metrics,
+    - Evaluation setup.
 
 ---
 
 ## Installation
 
-### Prerequisites
-
-To use **Modeling-GUI**, you need Python 3.6 or higher. Ensure that the required libraries are installed, or let the package manager install them for you.
-
-### Steps
-**To install using Pypi package**
-   ```bash
+```bash
 pip install modeling-gui
 ```
 
-1. **Clone the repository**:
+This default install includes AutoML (FLAML), Prophet forecasting, SHAP explainability, and shortcut helpers (Windows) out of the box for a one-step experience.
 
-   ```bash
-   git clone https://github.com/your_username/modeling_gui.git
-   cd modeling_gui
-   ```
+Prefer a lighter install (skip heavy optional deps)?
+```bash
+pip install "modeling-gui[lean]"
+```
 
-2. **Install dependencies**:
+---
 
-   You can install all the required dependencies listed in `requirements.txt`:
-   (The package requires python 3.9)
+## Launch
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+run_modeling_gui
+# or
+python -m modeling_gui
+```
 
-4. **Install the package**:
+---
 
-   Run the following command to install the package locally:
+## Quickstart (60 seconds)
 
-   ```bash
-   pip install .
-   ```
+1. **Install and launch** the app.
+2. Click **Load Demo Dataset** (bundled CSV).
+3. Choose what you want to predict (target column).
+4. Click **Smart Analyze**.
+5. Read the metrics and coach-bar hints; open the **“What I did”** tab to see a transparent summary of the pipeline. For a full AutoML walkthrough, see `examples/automl_smart_analyze_quickstart.md`.
 
-5. **Running the GUI**:
-
-   After installation, you can launch the GUI by running the following command:
-
-   ```bash
-   run_modeling_gui
-   ```
-
-   Alternatively, if you want to run it directly from the cloned directory:
-
-   ```bash
-   python main.py
-   ```
+You now have a complete modeling pipeline without writing a single line of code.
 
 ---
 
 ## Usage
 
-**Modeling-GUI** provides an interactive way to load data, select models, and visualize the results. Here's how to use the application:
-
 ### Supported Models
 
-You can choose from a wide array of models, each with specific use cases:
+* **Regression**
 
-- **OLS (Ordinary Least Squares)**: Standard linear regression model.
-- **WLS (Weighted Least Squares)**: Linear regression with weighted observations.
-- **GLS (Generalized Least Squares)**: A flexible linear model that accounts for heteroscedasticity.
-- **Recursive LS (Recursive Least Squares)**: Online linear regression useful for time series data.
-- **Rolling LS (Rolling Least Squares)**: Perform a rolling regression with a moving window.
-- **RLM (Robust Linear Model)**: Linear regression that is less sensitive to outliers.
-- **Random Forest**: Both classification and regression using an ensemble of decision trees.
-- **Gradient Boosting**: Powerful technique for both classification and regression, focusing on reducing prediction errors.
-- **KMeans Clustering**: Clustering algorithm for unsupervised learning, with customizable cluster numbers.
-- **Gaussian Fitting**: Fits a Gaussian (normal distribution) curve to the data.
-- **Exponential Growth/Decay Fitting**: Models exponential growth or decay patterns.
+  * OLS, WLS, GLS
+  * Recursive LS, Robust LS (RLM), Rolling LS
+  * RandomForestRegressor, GradientBoostingRegressor
+  * Gaussian and Exponential curve-fitting
+
+* **Classification**
+
+  * RandomForestClassifier, GradientBoostingClassifier
+
+* **Clustering**
+
+  * KMeans
+
+---
 
 ### Example Workflow
 
-1. **Loading Data**:
-   - Click the **"Load CSV"** button to load a dataset in CSV format. The dataset should contain both feature columns (X) and a target column (Y).
+1. **Load data**
 
-2. **Selecting Features**:
-   - After loading the CSV, select the appropriate feature (X) and target (Y) columns from the dropdown menus.
+   * Load your own CSV, or click **Load Demo Dataset**.
 
-3. **Choosing a Model**:
-   - From the **"Model"** dropdown, select the model you want to run (e.g., OLS, Random Forest, KMeans Clustering).
+2. **Select target**
 
-4. **Running the Model**:
-   - Click **"Run Model"** to execute the selected model and visualize the results. For customizable models (Random Forest, Gradient Boosting, KMeans), a dialog box will appear allowing you to set parameters like `n_estimators` or `max_depth`.
+   * Pick the column you want to predict (the app labels this as “Target column (what you want to predict)”).
 
-5. **Viewing Results**:
-   - The results of the model will be displayed in the output box, and visualizations (e.g., regression lines, confusion matrices, fitted curves) will be shown in separate windows.
+3. **(Optional) Adjust features**
 
-### Model Customization
+   * Optionally select which columns to use as inputs; by default, all non-target columns are considered.
 
-For some models, you can customize parameters via dialog boxes. For example:
+4. **Run analysis**
 
-- **Random Forest**: Customize the number of trees (`n_estimators`) and tree depth (`max_depth`).
-- **Gradient Boosting**: Customize the number of boosting rounds (`n_estimators`) and learning rate.
-- **KMeans Clustering**: Customize the number of clusters (`n_clusters`).
+   * In **Basic** mode, click **Smart Analyze** to:
+
+     * Detect problem type (regression/classification/…),
+     * Run AutoML (if installed),
+     * Compute metrics and generate plots.
+   * In **Expert** mode, you can instead pick a specific model and set parameters.
+
+5. **Inspect results**
+
+   * Check key metrics and plots.
+   * Open the **“What I did”** tab to see data summary, preprocessing, models tried, and evaluation configuration.
+
+6. **Save & share**
+
+   * Save a `.mgui` project or export a report to revisit or share results later.
+
+---
 
 ### Visualizations
 
-**Modeling-GUI** includes a range of high-quality visualizations to help you understand your models:
+Depending on the task and model, the app can show:
 
-- **Regression Models**: Scatter plots with regression lines (e.g., for OLS, WLS, GLS, RLM).
-- **Classification Models**: Confusion matrices (e.g., for Random Forest classification).
-- **Decision Trees**: Visual representations of decision trees in Random Forest models.
-- **Gaussian Fitting**: Gaussian (normal distribution) curve fitting plots.
-- **Exponential Growth/Decay Fitting**: Plots of exponential growth or decay functions.
+* Scatter and regression plots
+* **Residual plots** for regression
+* **Confusion matrices** for classification
+* **Decision tree diagrams** (where relevant)
+* **Feature importance** bar plots (tree-based models)
+* **Curve fits** (Gaussian/Exponential) with fitted curves vs data
+
+---
+
+### Train/Test Split & Metrics
+
+* Optional **train/test split**:
+
+  * Configurable test size and random state.
+* Regression metrics:
+
+  * R², RMSE, possibly MAE (domain-dependent)
+  * Residual plots
+* Classification metrics:
+
+  * Accuracy
+  * Classification report (precision, recall, F1 per class)
+  * Confusion matrix
+
+Domain presets can change which metrics are highlighted first (e.g. RMSE/MAPE for Finance, R² for Science).
+
+---
+
+### Model Persistence
+
+* **Save model**
+
+  * Store a trained model plus minimal metadata (target, features, preprocessing settings).
+* **Load model**
+
+  * Reload a saved model to:
+
+    * Inspect its configuration,
+    * Make predictions on new compatible data.
+
+All of this integrates with `.mgui` project files for reproducible workflows.
+
+---
+
+### Smart Analyze (AutoML)
+
+* Detects problem type from the target column:
+
+  * Regression vs classification (and others where supported).
+* Runs an AutoML backend (e.g. **FLAML**, if installed via `"modeling-gui[automl]"`) to:
+
+  * Handle preprocessing,
+  * Try several models,
+  * Select the best configuration based on appropriate metrics.
+* Generates:
+
+  * Metrics & plots,
+  * A structured summary for the **“What I did”** tab,
+  * Optional exportable report.
+
+If AutoML dependencies are not installed, **Smart Analyze** gracefully informs the user and suggests how to enable it.
+
+---
+
+### Basic vs Expert Mode
+
+* **Basic mode**
+
+  * Designed for users with **no coding or ML background**.
+  * Shows only:
+
+    * Data loading,
+    * Target selection,
+    * Domain preset,
+    * **Smart Analyze** button,
+    * Results and **“What I did”** summary.
+  * Coach/status bar guides the user step-by-step.
+
+* **Expert mode**
+
+  * Unlocks:
+
+    * Full model list and selection,
+    * Parameter dialogs (e.g. RandomForest, GradientBoosting, KMeans),
+    * Preprocessing toggles (standardization, missing-value strategy),
+    * Manual run buttons per model.
+
+---
+
+### Domain Presets
+
+Choose a **domain** to customize wording and defaults:
+
+* **Generic**
+
+  * Neutral defaults for general tabular tasks.
+
+* **Finance**
+
+  * Hints tuned to forecasting, risk scoring, and KPI modeling.
+  * Emphasis on RMSE/MAE/MAPE and time-series-friendly behavior.
+
+* **Science / Lab**
+
+  * Focus on regression, error analysis, and repeatability.
+  * Emphasis on R², RMSE, and residual plots.
+
+* **Business / Marketing**
+
+  * Focus on classification & segmentation (churn, propensity, clustering).
+  * Emphasis on accuracy, AUC, confusion matrices, and feature importance.
+
+Domain presets influence:
+
+* Coach bar hints,
+* Highlighted metrics,
+* Default visualizations shown after Smart Analyze.
+
+---
+
+## Projects & Reports
+
+* **Project files (`.mgui`)**
+
+  * Capture:
+
+    * Data path or reference,
+    * Domain preset,
+    * Target & feature selection,
+    * Preprocessing and AutoML settings,
+    * Best model and metrics,
+    * **“What I did”** structured summary.
+  * Opening a project restores the previous session as closely as possible.
+
+* **Reports**
+
+  * Export text/Markdown summaries that include:
+
+    * Data and preprocessing description,
+    * Models tried and best model details,
+    * Evaluation metrics,
+    * Key remarks for non-technical stakeholders.
+
+---
+
+## Examples
+
+* The `examples/README.md` explains the bundled demo dataset:
+
+  * `modeling_gui/data/demo_quickstart.csv`
+  * This is the dataset used when clicking **Load Demo Dataset** in the GUI.
+  * Columns include a regression target (`target`) and a binary classification target (`target_class`) so you can try both flows immediately.
 
 ---
 
 ## Dependencies
 
-The following libraries are required to run **Modeling-GUI**:
+* **Core**
 
-- **pandas**: For data manipulation and loading CSV files.
-- **matplotlib**: For creating visualizations.
-- **seaborn**: For enhanced visualizations (e.g., heatmaps for confusion matrices).
-- **statsmodels**: For statistical models like OLS, WLS, GLS, RLM.
-- **scikit-learn**: For machine learning models like Random Forest, Gradient Boosting, and KMeans Clustering.
-- **pyqt5**: For the graphical user interface.
-- **scipy**: For fitting Gaussian and exponential curves.
-- **graphviz**: For visualizing Random Forest decision trees.
+  * PyQt5
+  * matplotlib
+  * seaborn
+  * pandas
+  * statsmodels
+  * scikit-learn
+  * scipy
+  * graphviz
+  * numpy
 
-You can install all these dependencies using the `requirements.txt` file:
+* **Optional AutoML**
 
-```bash
-pip install -r requirements.txt
-```
+  * FLAML (installed via):
+
+    ```bash
+    pip install "modeling-gui[automl]"
+    ```
 
 ---
 
-## Contributing
+## Screenshots
 
-Contributions are welcome! If you would like to contribute to **Modeling-GUI**, please follow these steps:
+> (Paths and filenames are indicative; adjust if your repo uses different ones.)
 
-1. **Fork the repository** on GitHub.
-2. **Create a new feature branch** (`git checkout -b feature/new-feature`).
-3. **Make your changes** and commit them (`git commit -m "Add new feature"`).
-4. **Push to the branch** (`git push origin feature/new-feature`).
-5. **Open a Pull Request** explaining your changes.
+* Main window:
 
-Please ensure that your contributions are well-documented and covered by tests where applicable.
+  ![Main window](docs/screenshots/main_window.png)
+
+* Smart Analyze results:
+
+  ![Smart Analyze results](docs/screenshots/smart_analyze.png)
+
+---
+
+## Further Reading
+
+- [User Guide](docs/user-guide.md)
+- [Forecasting](docs/forecasting.md)
+- [Explainability & Scenario Testing](docs/explainability.md)
+- [Quality, Drift, and Model Cards](docs/quality-and-governance.md)
+- [Projects, Bundles, and Notebook Export](docs/projects-and-reports.md)
+- [Shortcuts and Installation](docs/shortcuts-and-installation.md)
 
 ---
 
 ## Version
 
-**Current Version**: v0.1.0
-
-This is the initial version of **Modeling-GUI**, providing core functionality for regression, classification, clustering, and data fitting models. 
-Future updates will include additional models, enhanced visualizations, and further customization options.
-Currently, The main focus is establishing a working framework with bug fixes.
-
----
-
-## Author
-
-Developed by **Chandrasekar SUBRAMANI NARAYANA**.
-
-Feel free to contact me for any questions or suggestions at [chandrasekarnarayana@gmail.com](mailto:chandrasekarnarayana@gmail.com).
+**Current Version**: `v0.1.2`
 
 ---
 
 ## License
 
-This project is licensed under the GPLv3 License. See the [LICENSE](LICENSE) file for details.
-
+**GPLv3** – see [`LICENSE`](LICENSE) for details.

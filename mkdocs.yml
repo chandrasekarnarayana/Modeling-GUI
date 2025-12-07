@@ -1,0 +1,32 @@
+site_name: Modeling-GUI
+site_url: https://example.com
+repo_url: https://github.com/chandrasekarnarayana/Modeling-GUI
+theme:
+  name: material
+  logo: assets/logo-modeling-gui.svg
+  favicon: assets/logo-modeling-gui.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - User Guide: user-guide.md
+  - Forecasting: forecasting.md
+  - Explainability: explainability.md
+  - Quality & Governance: quality-and-governance.md
+  - Projects & Reports: projects-and-reports.md
+  - Shortcuts & Installation: shortcuts-and-installation.md
+  - Recipes: recipes.md
+  - API:
+      - AutoML: api/automl.md
+      - Explain: api/explain.md
+      - Data Quality: api/data_quality.md
+      - Drift: api/drift.md
+      - Persistence: api/persistence.md
+      - Visualization: api/visualization.md
+  - FAQ: faq.md
+  - Development: development.md
+plugins:
+  - search

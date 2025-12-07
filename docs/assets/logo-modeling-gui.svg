@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="320" viewBox="0 0 320 320"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded square -->
+  <rect x="16" y="16" width="288" height="288" rx="48"
+        fill="#0b3c5d" />
+
+  <!-- Bars (data) -->
+  <rect x="70"  y="140" width="28" height="90" fill="#f8fafc" opacity="0.8"/>
+  <rect x="120" y="110" width="28" height="120" fill="#f8fafc" opacity="0.9"/>
+  <rect x="170" y="85"  width="28" height="145" fill="#f8fafc" opacity="1.0"/>
+
+  <!-- Stylized M / curve -->
+  <path d="M 65 230
+           C 95 170, 135 170, 160 210
+           S 235 215, 255 155"
+        fill="none"
+        stroke="#2bbbad"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+  <!-- Text -->
+  <text x="160" y="280"
+        font-family="system-ui, sans-serif"
+        font-size="40"
+        fill="#f8fafc"
+        text-anchor="middle">
+    MG
+  </text>
+</svg>

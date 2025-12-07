@@ -1,4 +1,6 @@
 from sklearn.preprocessing import StandardScaler
+import numpy as np
+import pandas as pd
 
 def normalize_data(df, columns):
     """
@@ -35,3 +37,37 @@ def handle_missing_values(df, strategy='mean'):
     else:
         raise ValueError("Invalid strategy. Choose 'mean', 'median', or 'mode'.")
 
+
+def apply_missing_strategy(df, strategy):
+    """
+    Apply missing value handling to a DataFrame.
+    strategy: 'none', 'drop', 'mean'
+    """
+    if strategy == 'none':
+        return df
+    if strategy == 'drop':
+        return df.dropna()
+    if strategy == 'mean':
+        numeric_cols = df.select_dtypes(include=np.number).columns
+        return df.copy().fillna(df[numeric_cols].mean())
+    raise ValueError("Invalid missing value strategy.")
+
+
+def standardize_features(df, columns):
+    """
+    Standardize numeric features and return transformed DataFrame plus scaler.
+    """
+    scaler = StandardScaler()
+    df_copy = df.copy()
+    df_copy[columns] = scaler.fit_transform(df_copy[columns])
+    return df_copy, scaler
+
+
+def select_numeric_columns(df, columns):
+    """
+    Return numeric subset of requested columns and list of dropped non-numeric columns.
+    """
+    selected = df[columns]
+    numeric_df = selected.select_dtypes(include=np.number)
+    dropped = [col for col in columns if col not in numeric_df.columns]
+    return numeric_df, dropped
