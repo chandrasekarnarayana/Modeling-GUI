@@ -1,0 +1,11 @@
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_01_intro.png'
+duration 3
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_02_smart.png'
+duration 3
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_03_tuning.png'
+duration 3
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_04_metrics.png'
+duration 3
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_05_export.png'
+duration 3
+file '/home/cs/Modeling-GUI/docs/screenshots/demo_slide_05_export.png'

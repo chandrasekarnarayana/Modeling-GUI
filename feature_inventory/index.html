@@ -1,0 +1,2394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/feature_inventory/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo-modeling-gui.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Feature Inventory - Modeling-GUI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feature-inventory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Modeling-GUI" class="md-header__button md-logo" aria-label="Modeling-GUI" data-md-component="logo">
+      
+  <img src="../assets/logo-modeling-gui.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Modeling-GUI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feature Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chandrasekarnarayana/Modeling-GUI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../user-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../forecasting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Forecasting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../explainability/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explainability
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quality-and-governance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quality & Governance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../projects-and-reports/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects & Reports
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../shortcuts-and-installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Shortcuts & Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recipes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../acknowledgments/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Acknowledgments
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/automl/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Modeling-GUI" class="md-nav__button md-logo" aria-label="Modeling-GUI" data-md-component="logo">
+      
+  <img src="../assets/logo-modeling-gui.svg" alt="logo">
+
+    </a>
+    Modeling-GUI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chandrasekarnarayana/Modeling-GUI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forecasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forecasting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explainability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explainability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-and-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-and-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects & Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shortcuts-and-installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcuts & Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/automl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AutoML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/explain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/drift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drift
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/persistence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Persistence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-statistical-regression-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Statistical Regression Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-machine-learning-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Machine Learning Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-time-series-forecasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Time-Series / Forecasting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-advanced-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Advanced Fitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-preprocessing-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. Preprocessing &amp; Encoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-metrics-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G. Metrics &amp; Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H. Visualizations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-automl-smart-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. AutoML / Smart Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j-explainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J. Explainability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-scenario-what-if-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K. Scenario / What-if Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l-data-quality-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L. Data Quality &amp; Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m-drift-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M. Drift / Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n-persistence-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N. Persistence &amp; Projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-reports-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O. Reports &amp; Exports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p-gui-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P. GUI &amp; UX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-docs-examples-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q. Docs, Examples, Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-roadmap-strategic-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R. Roadmap &amp; Strategic Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="R. Roadmap &amp; Strategic Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-term-polish-next-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near-term polish (next releases)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability-expansion-medium-horizon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability expansion (medium horizon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-bets-longer-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Big bets (longer-term)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-key-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Key Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="feature-inventory">Feature Inventory</h1>
+<p>This document inventories Modeling-GUI features and their status across code, GUI, docs, examples, and tests. Legend: Yes / No / Partial. Notes highlight remaining TODOs or caveats.</p>
+<h2 id="a-statistical-regression-models">A. Statistical Regression Models</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OLS</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (README/docs)</td>
+<td>Demo CSV implicit</td>
+<td>Yes (test_models.py)</td>
+<td>Consider explicit notebook example.</td>
+</tr>
+<tr>
+<td>WLS</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/user-guide)</td>
+<td>Yes (regression_advanced_ls.md)</td>
+<td>Yes (test_advanced_ls.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>GLS</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/user-guide)</td>
+<td>Yes (regression_advanced_ls.md)</td>
+<td>Yes (test_advanced_ls.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Recursive LS</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/user-guide)</td>
+<td>Yes (regression_advanced_ls.md)</td>
+<td>Yes (test_advanced_ls.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Rolling LS</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/user-guide)</td>
+<td>Yes (regression_advanced_ls.md)</td>
+<td>Yes (test_advanced_ls.py)</td>
+<td>Window doc in example.</td>
+</tr>
+<tr>
+<td>RLM</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/user-guide)</td>
+<td>Yes (regression_advanced_ls.md)</td>
+<td>Yes (test_advanced_ls.py)</td>
+<td>OK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="b-machine-learning-models">B. Machine Learning Models</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomForestRegressor</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (feature_importance_basic)</td>
+<td>Yes (test_models.py, test_tuning_and_leaderboard.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>RandomForestClassifier</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (classification_binary_basic.md; classification_business_roc_pr.md)</td>
+<td>Yes (test_tuning_and_leaderboard.py)</td>
+<td>Business ROC/PR example available.</td>
+</tr>
+<tr>
+<td>GradientBoostingRegressor</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (regression_gradient_boosting_basic.md)</td>
+<td>Yes (test_gradient_boosting.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>GradientBoostingClassifier</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (classification_multiclass_basic.md; classification_business_roc_pr.md)</td>
+<td>Yes (test_gradient_boosting.py)</td>
+<td>Business ROC/PR example available.</td>
+</tr>
+<tr>
+<td>LogisticRegression/SVM/etc.</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Not implemented.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c-clustering">C. Clustering</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KMeans</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (user-guide classical models)</td>
+<td>Yes (examples/clustering_kmeans_basic.md)</td>
+<td>Yes (test_clustering.py)</td>
+<td>Coach hint added; consider silhouette/elbow note in GUI.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d-time-series-forecasting">D. Time-Series / Forecasting</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive forecast</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (examples/forecasting_basic.md)</td>
+<td>Yes (test_forecasting.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>ETS/ExponentialSmoothing</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (examples/forecasting_basic.md)</td>
+<td>Yes (test_forecasting.py)</td>
+<td>Requires statsmodels.</td>
+</tr>
+<tr>
+<td>ARIMA</td>
+<td>Yes</td>
+<td>Yes (selectable)</td>
+<td>Yes (docs/forecasting)</td>
+<td>Yes (examples/forecasting_basic.md)</td>
+<td>Yes (test_forecasting.py)</td>
+<td>Warnings on tiny series are acceptable.</td>
+</tr>
+<tr>
+<td>Prophet</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (docs/forecasting)</td>
+<td>Yes (examples/forecasting_basic.md)</td>
+<td>Yes (test_forecasting_advanced.py)</td>
+<td>Holidays limited to preset country list; no custom regressors yet.</td>
+</tr>
+<tr>
+<td>Time-aware splits/backtesting</td>
+<td>Yes (rolling backtest)</td>
+<td>Yes (checkbox)</td>
+<td>Yes (docs/forecasting)</td>
+<td>Partial (advanced note in forecasting_basic.md)</td>
+<td>Yes (test_forecasting_advanced.py)</td>
+<td>Multi-fold backtest simple; could visualize more.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e-advanced-fitting">E. Advanced Fitting</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gaussian fit</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (user-guide curve fitting)</td>
+<td>Yes (examples/curve_fitting_gaussian_exponential.md)</td>
+<td>Yes (test_curve_fitting.py)</td>
+<td>Minor optimize warnings acceptable.</td>
+</tr>
+<tr>
+<td>Exponential fit</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (user-guide curve fitting)</td>
+<td>Yes (examples/curve_fitting_gaussian_exponential.md)</td>
+<td>Yes (test_curve_fitting.py)</td>
+<td>Minor optimize warnings acceptable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f-preprocessing-encoding">F. Preprocessing &amp; Encoding</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing value handling</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Implicit</td>
+<td>Yes (test_preprocessing.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Numeric vs categorical inference</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Yes (examples/preprocessing_dates_and_categoricals.md)</td>
+<td>Yes (test_preprocessing.py)</td>
+<td>UI exposure is light; backend defaulted.</td>
+</tr>
+<tr>
+<td>One-hot encoding</td>
+<td>Yes (default)</td>
+<td>Yes (Expert dropdown)</td>
+<td>Yes</td>
+<td>Yes (examples/preprocessing_dates_and_categoricals.md)</td>
+<td>Yes (test_preprocessing_encoding.py)</td>
+<td>Default strategy in Basic mode.</td>
+</tr>
+<tr>
+<td>Target encoding</td>
+<td>Yes (optional)</td>
+<td>Yes (Expert dropdown)</td>
+<td>Yes</td>
+<td>Yes (examples/preprocessing_dates_and_categoricals.md)</td>
+<td>Yes (test_preprocessing_encoding.py)</td>
+<td>Advanced; unseen categories use global mean.</td>
+</tr>
+<tr>
+<td>Date parsing + derived features</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Yes (forecasting/user-guide)</td>
+<td>Yes (examples/preprocessing_dates_and_categoricals.md)</td>
+<td>Yes (test_preprocessing.py)</td>
+<td>Add clearer GUI toggle description.</td>
+</tr>
+<tr>
+<td>Scaling/standardization</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Implicit</td>
+<td>Yes</td>
+<td>OK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g-metrics-evaluation">G. Metrics &amp; Evaluation</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regression metrics (R², RMSE, MAE, MAPE)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (user-guide)</td>
+<td>Implicit</td>
+<td>Yes (test_metrics.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Classification metrics (accuracy, balanced acc, F1)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Implicit</td>
+<td>Yes (test_metrics.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>ROC AUC / PR AUC</td>
+<td>Yes (when proba)</td>
+<td>Yes (metrics table)</td>
+<td>Yes (user-guide)</td>
+<td>Yes (classification_business_roc_pr.md)</td>
+<td>Yes (test_metrics.py, test_metrics_ui_integration.py)</td>
+<td>Business example highlights ROC/PR.</td>
+</tr>
+<tr>
+<td>Domain-specific highlighting</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (user-guide)</td>
+<td>Yes (recipes.md; classification_business_roc_pr.md; forecasting_basic.md)</td>
+<td>Yes (test_metrics_ui_integration.py)</td>
+<td>Domain presets drive primary metrics and coach text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="h-visualizations">H. Visualizations</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regression plots</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (visualizations example)</td>
+<td>Yes (visualizations_regression_and_residuals.md)</td>
+<td>Yes (test_visualizations.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Residual plots</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (visualizations example)</td>
+<td>Yes (visualizations_regression_and_residuals.md)</td>
+<td>Yes (test_visualizations.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Confusion matrices</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (visualizations_confusion_and_trees.md)</td>
+<td>Yes (test_visualizations.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Tree diagrams</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Yes (visualizations_confusion_and_trees.md)</td>
+<td>Yes (test_visualizations.py)</td>
+<td>Graphviz must be installed.</td>
+</tr>
+<tr>
+<td>Feature importance plots</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (explainability/docs)</td>
+<td>Yes (examples/feature_importance_basic.md)</td>
+<td>Yes (test_explainability.py)</td>
+<td>OK; export/screenshot polish still useful.</td>
+</tr>
+<tr>
+<td>Gaussian/Exponential fits</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (examples/curve_fitting_gaussian_exponential.md)</td>
+<td>Yes (test_curve_fitting.py)</td>
+<td>Add screenshot in docs.</td>
+</tr>
+<tr>
+<td>Forecast plots</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (examples/forecasting_basic.md)</td>
+<td>Yes (test_visualizations.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Partial dependence</td>
+<td>Yes</td>
+<td>Yes (Scenario tab button)</td>
+<td>Yes (docs/explainability)</td>
+<td>Yes (examples/scenario_testing_basic.md)</td>
+<td>Yes (test_explainability.py)</td>
+<td>OK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i-automl-smart-analyze">I. AutoML / Smart Analyze</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Problem type detection</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (automl_smart_analyze_quickstart.md)</td>
+<td>Partial (test_automl.py covers)</td>
+<td>Doc + example now present.</td>
+</tr>
+<tr>
+<td>AutoML backend (FLAML optional + fallbacks)</td>
+<td>Yes (with fallback models)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (automl_smart_analyze_quickstart.md)</td>
+<td>Yes (test_automl.py/test_automl_optional.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Leaderboard of candidate models</td>
+<td>Yes</td>
+<td>Yes (tab + chart)</td>
+<td>Yes</td>
+<td>Yes (automl_smart_analyze_quickstart.md)</td>
+<td>Yes (test_tuning_and_leaderboard.py)</td>
+<td>Screenshot referenced in docs.</td>
+</tr>
+<tr>
+<td>Hyperparameter tuning presets</td>
+<td>Yes</td>
+<td>Yes (Tune… button)</td>
+<td>Yes</td>
+<td>Yes (automl_smart_analyze_quickstart.md)</td>
+<td>Yes (test_tuning_and_leaderboard.py)</td>
+<td>GUI screenshot referenced.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="j-explainability">J. Explainability</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global explanations (SHAP or fallback)</td>
+<td>Yes</td>
+<td>Yes (Explain tab)</td>
+<td>Yes</td>
+<td>Yes (examples/explainability_basic.md)</td>
+<td>Yes (test_explain.py, test_explainability.py)</td>
+<td>SHAP optional.</td>
+</tr>
+<tr>
+<td>Local explanations</td>
+<td>Yes</td>
+<td>Yes (row selector)</td>
+<td>Yes</td>
+<td>Yes (examples/explainability_basic.md)</td>
+<td>Yes</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Partial dependence</td>
+<td>Yes</td>
+<td>Yes (Scenario tab)</td>
+<td>Yes</td>
+<td>Yes (examples/scenario_testing_basic.md)</td>
+<td>Yes</td>
+<td>OK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="k-scenario-what-if-testing">K. Scenario / What-if Testing</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sliders/inputs for key features</td>
+<td>Yes</td>
+<td>Yes (Scenario tab)</td>
+<td>Yes</td>
+<td>Yes (examples/scenario_testing_basic.md)</td>
+<td>Yes (test_scenario.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Live recomputation of predictions</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>OK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l-data-quality-troubleshooting">L. Data Quality &amp; Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing target checks</td>
+<td>Yes</td>
+<td>Yes (Data quality tab)</td>
+<td>Yes</td>
+<td>Yes (data_quality_and_troubleshooting.md)</td>
+<td>Partial (test_data_quality.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Non-numeric feature checks</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Leakage detection</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (troubleshooting.md)</td>
+<td>Yes (data_quality_and_troubleshooting.md)</td>
+<td>Yes (test_data_quality.py)</td>
+<td>Heuristics improved (names + correlation).</td>
+</tr>
+<tr>
+<td>Class imbalance warnings</td>
+<td>Yes (heuristic)</td>
+<td>Yes</td>
+<td>Yes (troubleshooting.md)</td>
+<td>Yes (data_quality_and_troubleshooting.md)</td>
+<td>Yes (test_data_quality.py)</td>
+<td>Threshold based on max/min ratio.</td>
+</tr>
+<tr>
+<td>Exception-based suggestions</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (troubleshooting.md)</td>
+<td>Yes (data_quality_and_troubleshooting.md)</td>
+<td>Partial</td>
+<td>Friendly mappings added; expand coverage in future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m-drift-monitoring">M. Drift / Monitoring</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training snapshot</td>
+<td>Yes</td>
+<td>Yes (projects)</td>
+<td>Yes</td>
+<td>Partial (batch prediction example)</td>
+<td>Yes (test_drift.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Drift comparison on new data</td>
+<td>Yes</td>
+<td>Yes (Data Drift tab + coach bar)</td>
+<td>Yes</td>
+<td>Partial (examples/batch_prediction_basic.md)</td>
+<td>Yes</td>
+<td>Could add UI screenshot.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="n-persistence-projects">N. Persistence &amp; Projects</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model save/load</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Yes (test_persistence.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Project .mgui save/load</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (projects docs)</td>
+<td>Partial</td>
+<td>Yes (test_version_history_and_notebook.py)</td>
+<td>Ensure legacy projects migrate.</td>
+</tr>
+<tr>
+<td>Model cards</td>
+<td>Yes</td>
+<td>Yes (Model cards tab)</td>
+<td>Yes</td>
+<td>Yes (model_cards_and_history.md)</td>
+<td>Yes (test_model_cards.py)</td>
+<td>Export Markdown/JSON supported.</td>
+</tr>
+<tr>
+<td>Version history</td>
+<td>Yes (run_history persisted)</td>
+<td>Yes (history table)</td>
+<td>Yes (projects-and-reports.md)</td>
+<td>Yes (model_cards_and_history.md)</td>
+<td>Yes (test_version_history_and_notebook.py)</td>
+<td>Filtering by problem/model supported.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="o-reports-exports">O. Reports &amp; Exports</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“What I did” summary</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (reports_and_bundles.md)</td>
+<td>Partial</td>
+<td>Export button available.</td>
+</tr>
+<tr>
+<td>Narrative report</td>
+<td>Yes</td>
+<td>Yes (Export report)</td>
+<td>Yes</td>
+<td>Yes (reports_and_bundles.md)</td>
+<td>Partial</td>
+<td>Uses narrative builder; add more tests.</td>
+</tr>
+<tr>
+<td>Analysis bundles (zip)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (reports_and_bundles.md)</td>
+<td>Yes (test_bundles.py)</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Notebook export</td>
+<td>Yes (richer cells)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (reports_and_bundles.md)</td>
+<td>Yes (test_version_history_and_notebook.py)</td>
+<td>Exports runnable notebook with data/preprocessing/training/plots.</td>
+</tr>
+<tr>
+<td>Batch prediction &amp; CSV export</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (examples/batch_prediction_basic.md)</td>
+<td>Yes (test_batch_prediction.py)</td>
+<td>OK; add drift screenshot.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="p-gui-ux">P. GUI &amp; UX</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic vs Expert mode</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>No</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Domain presets</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (recipes.md + linked examples)</td>
+<td>No</td>
+<td>Coach bar and metrics highlighting aligned with domain.</td>
+</tr>
+<tr>
+<td>Coach/status bar</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>No</td>
+<td>OK.</td>
+</tr>
+<tr>
+<td>Keyboard shortcuts</td>
+<td>Yes</td>
+<td>Yes (Help → Keyboard Shortcuts…)</td>
+<td>Yes (shortcuts-and-installation.md)</td>
+<td>Partial</td>
+<td>Yes (test_gui_smoke.py)</td>
+<td>Cheat-sheet dialog added; consider in-app quick ref link.</td>
+</tr>
+<tr>
+<td>Icons &amp; shortcut installer</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (shortcuts-and-installation.md)</td>
+<td>No</td>
+<td>No</td>
+<td>First-run tip added; optional GUI link.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="q-docs-examples-tests">Q. Docs, Examples, Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implemented (code)</th>
+<th>Exposed in GUI</th>
+<th>Documented</th>
+<th>Example available</th>
+<th>Tests</th>
+<th>Notes / Gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docs site (MkDocs)</td>
+<td>Yes</td>
+<td>N/A</td>
+<td>Yes (populated pages)</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Keep screenshots current.</td>
+</tr>
+<tr>
+<td>Examples (beyond demo)</td>
+<td>Yes</td>
+<td>N/A</td>
+<td>Yes (examples/*.md)</td>
+<td>Yes</td>
+<td>N/A</td>
+<td>Add notebook export sample/screenshot.</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>Broad coverage</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Yes (pytest suite)</td>
+<td>UI/visual regression still light.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="r-roadmap-strategic-features">R. Roadmap &amp; Strategic Features</h2>
+<p>Shipped work is captured in sections A–Q. This section tracks what is ahead to keep pushing toward a best-in-class no-code modeling experience.</p>
+<h3 id="near-term-polish-next-releases">Near-term polish (next releases)</h3>
+<table>
+<thead>
+<tr>
+<th>Focus</th>
+<th>Goal</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leaderboard &amp; comparison UX</td>
+<td>Cleaner comparisons, exportable charts, clearer coach hints</td>
+<td>In progress</td>
+<td>Builds on current leaderboard; tighten visuals and screenshots.</td>
+</tr>
+<tr>
+<td>Preprocessing guidance</td>
+<td>Surface type inference, missing/imbalance guardrails, clearer Expert toggles</td>
+<td>Planned/partial</td>
+<td>Backend inference exists; needs guided UI copy and wizarding.</td>
+</tr>
+<tr>
+<td>Drift/report visuals</td>
+<td>Richer drift and report screenshots/exports</td>
+<td>Planned</td>
+<td>Drift heuristics exist; add export/share affordances.</td>
+</tr>
+<tr>
+<td>Demo &amp; templates</td>
+<td>Auto demo mode, guided tours, starter templates</td>
+<td>Planned</td>
+<td>Successor to Quick Win 1.11; keeps onboarding truly no-code.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="capability-expansion-medium-horizon">Capability expansion (medium horizon)</h3>
+<table>
+<thead>
+<tr>
+<th>Focus</th>
+<th>Goal</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Additional models</td>
+<td>Logistic Regression, SVM, XGBoost/LightGBM defaults</td>
+<td>Planned</td>
+<td>Expands classification breadth without overwhelming beginners.</td>
+</tr>
+<tr>
+<td>Data loading breadth</td>
+<td>Multi-file/partitioned CSV ingest and optional DB connectors</td>
+<td>Planned</td>
+<td>Start with multi-CSV merge plus profiling.</td>
+</tr>
+<tr>
+<td>Plugin-like extensibility</td>
+<td>Lite hooks for custom models, metrics, plots</td>
+<td>Planned</td>
+<td>Config-driven hooks first; marketplace later.</td>
+</tr>
+<tr>
+<td>Batch/automation</td>
+<td>Headless/CLI scoring and scheduled batch runs</td>
+<td>Planned</td>
+<td>Complements GUI with repeatable pipelines.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="big-bets-longer-term">Big bets (longer-term)</h3>
+<table>
+<thead>
+<tr>
+<th>Focus</th>
+<th>Goal</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workflow canvas</td>
+<td>Drag-and-drop pipeline editing and saved recipes</td>
+<td>Not started</td>
+<td>Post-1.0 UX overhaul.</td>
+</tr>
+<tr>
+<td>Cloud/remote runtime</td>
+<td>Run heavy jobs remotely; keep GUI as control plane</td>
+<td>Not started</td>
+<td>Requires auth plus compute backends.</td>
+</tr>
+<tr>
+<td>Monitoring dashboard</td>
+<td>Production drift/quality/alerting views</td>
+<td>Not started</td>
+<td>Builds on existing drift checks.</td>
+</tr>
+<tr>
+<td>Collaboration &amp; sharing</td>
+<td>Project sharing, comments, template gallery, plugin marketplace</td>
+<td>Not started</td>
+<td>Multi-user story.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary-of-key-gaps">Summary of Key Gaps</h2>
+<ul>
+<li><strong>Implementation gaps</strong>: More model coverage (LogReg/SVM/XGBoost/LightGBM), multi-file ingest/DB connectors, plugin hooks, headless/batch automation, and longer-term canvas/remote/monitoring/collaboration work.</li>
+<li><strong>GUI/UX gaps</strong>: Leaderboard and drift/report polish, clearer preprocessing guidance, guided demos/templates, richer export/share affordances.</li>
+<li><strong>Docs &amp; tests gaps</strong>: Smart Analyze/ROC–PR/forecast/notebook screenshots refreshed; still add drift/model-card visuals and expand GUI/visual regression coverage alongside upcoming features.</li>
+<li><strong>Media</strong>: Demo video ready at <code>docs/assets/demo_promo.mp4</code>; include in release assets and site links.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
