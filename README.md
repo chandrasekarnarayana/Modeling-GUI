@@ -56,8 +56,10 @@ The goal is simple:
 - [Examples](#examples)
 - [Dependencies](#dependencies)
 - [Screenshots](#screenshots)
+- [Demo Video](#demo-video)
 - [Version](#version)
 - [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -390,6 +392,32 @@ Domain presets influence:
 
   ![Smart Analyze results](docs/screenshots/smart_analyze.png)
 
+* Smart Analyze (AutoML run + metrics):
+
+  ![Smart Analyze run](docs/screenshots/smart_analyze_run.png)
+
+* Leaderboard and tuning:
+
+  ![Leaderboard](docs/screenshots/smart_analyze_leaderboard.png)
+
+* ROC/PR curves:
+
+  ![Classification metrics](docs/screenshots/metrics_roc_pr.png)
+
+* Forecasting:
+
+  ![Forecast example](docs/screenshots/forecast_example.png)
+
+* Notebook export preview:
+
+  ![Notebook export cells](docs/screenshots/notebook_export_cells.png)
+
+## Demo Video
+
+- Watch the 60s demo: [docs/assets/demo_promo.mp4](docs/assets/demo_promo.mp4)  
+  (Attach this MP4 to the next GitHub release for easy sharing; LinkedIn prefers native uploads.)
+- Plan/record the 6–8 minute walkthrough using the storyboard + helper script: see `docs/marketing/demo_storyboard_longform.md` and `docs/scripts/demo_setup.py`. Save the recorded long-form MP4 to `docs/assets/demo_promo.mp4` before publishing the release.
+
 ---
 
 ## Further Reading
@@ -412,3 +440,16 @@ Domain presets influence:
 ## License
 
 **GPLv3** – see [`LICENSE`](LICENSE) for details.
+
+---
+
+## Acknowledgments
+
+**Primary Author**  
+Chandrasekar Subramani Narayana — developer, researcher, and maintainer of Modeling-GUI. Responsible for core algorithms, GUI architecture, documentation, explainability modules, forecasting engine, AutoML integration, and the project roadmap.
+
+**Conceptual Inspiration & User Perspective**  
+Arunaachalam Subramani Narayana — acknowledged with deep gratitude for inspiring the creation of a no-code modeling environment. His early insights, focused on the challenges faced by users who do not program regularly, led to the design principles of minimal steps to run models, intuitive workflows, guided analysis, scenario testing for decision-making, and automation over repeated manual coding. This perspective continues to guide Modeling-GUI for users across finance, science, business, applied research, education, and more.
+
+**Community & Open-Source**  
+Thanks to the broader Python ecosystem — PyQt, pandas, scikit-learn, statsmodels, matplotlib, seaborn, Prophet, FLAML, SHAP — which makes this tool possible.

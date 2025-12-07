@@ -19,6 +19,7 @@ nav:
   - Projects & Reports: projects-and-reports.md
   - Shortcuts & Installation: shortcuts-and-installation.md
   - Recipes: recipes.md
+  - Acknowledgments: acknowledgments.md
   - API:
       - AutoML: api/automl.md
       - Explain: api/explain.md

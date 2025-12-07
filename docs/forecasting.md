@@ -44,7 +44,7 @@ For date parsing and categorical handling tips, see `examples/preprocessing_date
 
 ## Screenshots
 
-- Forecast plot: `docs/screenshots/main_window.png` (placeholder)
+- Forecast plot: `docs/screenshots/forecast_example.png`
 
 ## Notes
 

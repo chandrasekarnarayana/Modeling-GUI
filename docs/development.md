@@ -14,6 +14,7 @@ pip install -e .[dev]
 - Format check: `black --check modeling_gui`
 - Tests: `pytest`
 - Docs: `mkdocs serve` (live preview)
+- Regenerate screenshots/video assets: `python docs/scripts/generate_media.py`
 - Matplotlib backend: tests use `Agg` (headless). Plots are generated but not shown; to inspect, run plotting code in a notebook or script locally.
 
 ## Structure

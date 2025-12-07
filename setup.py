@@ -39,6 +39,18 @@ setup(
         "automl": [
             "flaml>=2.2.0",
         ],
+        # Developer tooling for linting, testing, and docs
+        "dev": [
+            "black==24.4.2",
+            "ruff==0.5.4",
+            "pytest>=7.0",
+            "mypy>=1.11.1",
+            "pandas-stubs",
+            "numpy",
+            "mkdocs",
+            "mkdocs-material",
+            "mkdocstrings[python]",
+        ],
         "full": [
             "flaml>=2.2.0",
             "prophet>=1.1",

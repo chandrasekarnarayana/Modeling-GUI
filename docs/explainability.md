@@ -34,9 +34,9 @@ Modeling-GUI offers explainability for both global and local views, with optiona
    - Read the updated prediction and delta text.
 5. Optional: click “Show partial dependence” to see how predictions change over the full feature range.
 
-Screenshot placeholders:
-- `![Global importance](media/global_importance.png)`
-- `![Scenario testing](media/scenario_testing.png)`
+Screenshots:
+- ![Global importance](screenshots/global_importance.png)
+- ![Scenario testing](screenshots/scenario_testing.png)
 
 ## Notes
 

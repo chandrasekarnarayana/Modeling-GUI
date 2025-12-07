@@ -29,8 +29,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material mkdocstrings[python]
 
+      - name: Configure Git author
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Build docs
         run: mkdocs build --strict
 
       - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs gh-deploy --force

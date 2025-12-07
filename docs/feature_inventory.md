@@ -74,7 +74,7 @@ This document inventories Modeling-GUI features and their status across code, GU
 | Residual plots | Yes | Yes | Yes (visualizations example) | Yes (visualizations_regression_and_residuals.md) | Yes (test_visualizations.py) | OK. |
 | Confusion matrices | Yes | Yes | Yes | Yes (visualizations_confusion_and_trees.md) | Yes (test_visualizations.py) | OK. |
 | Tree diagrams | Yes | Yes | Partial | Yes (visualizations_confusion_and_trees.md) | Yes (test_visualizations.py) | Graphviz must be installed. |
-| Feature importance plots | Yes | Yes | Yes (explainability/docs) | Yes (examples/feature_importance_basic.md) | No | Add plot test (optional). |
+| Feature importance plots | Yes | Yes | Yes (explainability/docs) | Yes (examples/feature_importance_basic.md) | Yes (test_explainability.py) | OK; export/screenshot polish still useful. |
 | Gaussian/Exponential fits | Yes | Yes | Yes | Yes (examples/curve_fitting_gaussian_exponential.md) | Yes (test_curve_fitting.py) | Add screenshot in docs. |
 | Forecast plots | Yes | Yes | Yes | Yes (examples/forecasting_basic.md) | Yes (test_visualizations.py) | OK. |
 | Partial dependence | Yes | Yes (Scenario tab button) | Yes (docs/explainability) | Yes (examples/scenario_testing_basic.md) | Yes (test_explainability.py) | OK. |
@@ -159,41 +159,38 @@ This document inventories Modeling-GUI features and their status across code, GU
 
 ## R. Roadmap & Strategic Features
 
-The following table maps high-level roadmap items to current status.
+Shipped work is captured in sections A–Q. This section tracks what is ahead to keep pushing toward a best-in-class no-code modeling experience.
 
-| Roadmap Group | Feature | Implemented (code) | Exposed in GUI | Documented | Example available | Tests | Notes / Status |
-|---------------|---------|--------------------|----------------|------------|-------------------|-------|----------------|
-| Quick Win 1.1 | Smart Analyze + GUI core polish | Yes | Yes | Yes | Yes (quickstart/demo) | Partial | Core flow solid; coach hints still evolving (see I, P). |
-| Quick Win 1.2 | GUI Enhancements (Basic/Expert clarity) | Yes | Yes | Yes | Partial | No | Mode toggle/tooltips in place; more examples/screenshots welcome (see P). |
-| Quick Win 1.3 | Hyperparameter Tuning (basic) | Yes | Yes | Yes | Yes (automl_smart_analyze_quickstart.md) | Yes (test_tuning_and_leaderboard.py) | RF/GB presets with dialog (see I). |
-| Quick Win 1.4 | Leaderboard Visual Upgrade | Partial | Yes | Yes | Yes | Partial | Chart exists; screenshots in docs; polish still desired (see I, H). |
-| Quick Win 1.5 | Explainability – Global view | Yes | Yes | Yes | Yes | Yes | SHAP optional; fallback importances (see J). |
-| Quick Win 1.6 | Scenario Testing – MVP sliders | Yes | Yes | Yes | Yes | Yes | Fully wired (see K). |
-| Quick Win 1.7 | Forecasting UI (minimal but usable) | Yes | Yes | Yes | Yes | Yes | Prophet/ARIMA/backtest available (see D). |
-| Quick Win 1.8 | Model Cards – Basic version | Yes | Yes | Yes | Yes (model_cards_and_history.md) | Yes | Export available; filtering added (see N). |
-| Quick Win 1.9 | Drift Detection – Basic version | Yes | Yes | Yes | Partial | Yes | Simple heuristics; richer views desirable (see M). |
-| Quick Win 1.10 | Documentation Essentials | Yes | N/A | Yes | N/A | N/A | Docs site + README; keep screenshots current (see Q). |
-| Quick Win 1.11 | Auto Demo Mode + GIF recorder helper | No | No | No | No | No | Not started; future nicety. |
-| Medium 2.1 | Batch Prediction + Export | Yes | Yes | Yes | Yes | Yes | Available via batch predict dialog (see O). |
-| Medium 2.2 | Explainability – Local view (per-row) | Yes | Yes | Yes | Yes | Yes | Row selector + plots (see J). |
-| Medium 2.3 | Partial Dependence Plots | Yes | Yes | Yes | Yes | Yes | Via Scenario tab (see H, J, K). |
-| Medium 2.4 | Advanced Forecasting (Auto-ARIMA, Prophet, backtesting) | Yes | Yes | Yes | Yes | Yes | Prophet core; ARIMA/ETS; backtest metrics (see D). |
-| Medium 2.5 | Improved Preprocessing | Partial | Partial | Yes | Yes | Yes | Target encoding advanced; UI toggle clarity pending (see F). |
-| Medium 2.6 | Model Persistence / Bundles / Reproducibility | Yes | Yes | Yes | Yes (model_cards_and_history.md) | Yes | Projects, bundles, notebook export; more examples welcome (see N, O). |
-| Medium 2.7 | Plugin-like Architecture (Lite) | No | No | No | No | No | Planned; not started. |
-| Medium 2.8 | Multiple-file Data Loading (Optional) | No | No | No | No | No | Planned; not started. |
-| Medium 2.9 | More ML Models (LogReg, SVM, XGBoost/LightGBM) | No | No | No | No | No | Early planning; current set limited (see B). |
-| Long 3.1 | Interactive Workflow Canvas (Drag-and-Drop) | No | No | No | No | No | Long-term (post v1.0). |
-| Long 3.2 | Database Connectors | No | No | No | No | No | Long-term. |
-| Long 3.3 | Cloud Execution / Remote Runtime | No | No | No | No | No | Long-term. |
-| Long 3.4 | Model Monitoring Dashboard | No | No | No | No | No | Long-term. |
-| Long 3.5 | Plugin Marketplace | No | No | No | No | No | Long-term. |
-| Long 3.6 | Collaborative Editing | No | No | No | No | No | Long-term. |
+### Near-term polish (next releases)
+
+| Focus | Goal | Status | Notes |
+|-------|------|--------|-------|
+| Leaderboard & comparison UX | Cleaner comparisons, exportable charts, clearer coach hints | In progress | Builds on current leaderboard; tighten visuals and screenshots. |
+| Preprocessing guidance | Surface type inference, missing/imbalance guardrails, clearer Expert toggles | Planned/partial | Backend inference exists; needs guided UI copy and wizarding. |
+| Drift/report visuals | Richer drift and report screenshots/exports | Planned | Drift heuristics exist; add export/share affordances. |
+| Demo & templates | Auto demo mode, guided tours, starter templates | Planned | Successor to Quick Win 1.11; keeps onboarding truly no-code. |
+
+### Capability expansion (medium horizon)
+
+| Focus | Goal | Status | Notes |
+|-------|------|--------|-------|
+| Additional models | Logistic Regression, SVM, XGBoost/LightGBM defaults | Planned | Expands classification breadth without overwhelming beginners. |
+| Data loading breadth | Multi-file/partitioned CSV ingest and optional DB connectors | Planned | Start with multi-CSV merge plus profiling. |
+| Plugin-like extensibility | Lite hooks for custom models, metrics, plots | Planned | Config-driven hooks first; marketplace later. |
+| Batch/automation | Headless/CLI scoring and scheduled batch runs | Planned | Complements GUI with repeatable pipelines. |
+
+### Big bets (longer-term)
+
+| Focus | Goal | Status | Notes |
+|-------|------|--------|-------|
+| Workflow canvas | Drag-and-drop pipeline editing and saved recipes | Not started | Post-1.0 UX overhaul. |
+| Cloud/remote runtime | Run heavy jobs remotely; keep GUI as control plane | Not started | Requires auth plus compute backends. |
+| Monitoring dashboard | Production drift/quality/alerting views | Not started | Builds on existing drift checks. |
+| Collaboration & sharing | Project sharing, comments, template gallery, plugin marketplace | Not started | Multi-user story. |
 
 ## Summary of Key Gaps
 
-- **Implementation gaps**: Troubleshooting heuristics could be expanded further; medium items not started: plugin-lite (2.7), multi-file loading (2.8), additional ML models (2.9). Long-term (3.1–3.6) intentionally unstarted.
-- **GUI wiring / UX gaps**: Drift/model-card views could surface richer summaries/filters; feature-importance/tree export affordances could be surfaced further.
-- **Documentation gaps**: Screenshots for leaderboard/backtesting/scenario testing/drift/model cards; optional deeper SHAP/visual export notes.
-- **Example gaps**: Optional feature-importance export/tree diagram example; richer notebook export screenshot.
-- **Test gaps**: GUI/integration/visual regression tests still light; SHAP path only lightly exercised when installed.
+- **Implementation gaps**: More model coverage (LogReg/SVM/XGBoost/LightGBM), multi-file ingest/DB connectors, plugin hooks, headless/batch automation, and longer-term canvas/remote/monitoring/collaboration work.
+- **GUI/UX gaps**: Leaderboard and drift/report polish, clearer preprocessing guidance, guided demos/templates, richer export/share affordances.
+- **Docs & tests gaps**: Smart Analyze/ROC–PR/forecast/notebook screenshots refreshed; still add drift/model-card visuals and expand GUI/visual regression coverage alongside upcoming features.
+- **Media**: Demo video ready at `docs/assets/demo_promo.mp4`; include in release assets and site links.
