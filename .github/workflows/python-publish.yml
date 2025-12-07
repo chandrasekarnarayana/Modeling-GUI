@@ -19,7 +19,7 @@ jobs:
 
     # Set up the Python environment
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v6
       with:
         python-version: '3.9'  # You can specify a particular version if needed
 
