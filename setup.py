@@ -41,7 +41,7 @@ setup(
         ],
         # Developer tooling for linting, testing, and docs
         "dev": [
-            "black==24.4.2",
+            "black==25.11.0",
             "ruff==0.5.4",
             "pytest>=7.0",
             "mypy>=1.11.1",
