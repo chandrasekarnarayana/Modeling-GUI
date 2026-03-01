@@ -42,7 +42,7 @@ setup(
         # Developer tooling for linting, testing, and docs
         "dev": [
             "black==24.4.2",
-            "ruff==0.5.4",
+            "ruff==0.15.4",
             "pytest>=7.0",
             "mypy>=1.11.1",
             "pandas-stubs",
